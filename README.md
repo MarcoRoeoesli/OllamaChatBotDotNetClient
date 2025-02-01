@@ -1,7 +1,7 @@
 # Ollama Chat Bot .Net Client
 
 Welcome to the Ollama Chat Bot Client! This guide will walk you through the steps to set up and use the chat application with the Deepseek R1 model hosted on Ollama.
-
+![til](OllamaChatBot.gif)
 ---
 
 ## Prerequisites
