@@ -44,6 +44,8 @@ x64/
 *.svclog
 *.scc
 
+.vs/
+
 # Visual C++ cache files
 ipch/
 *.aps
@@ -131,3 +133,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+/src/.vs/OllamaChatBotClient/config/applicationhost.config
+/src/.vs/OllamaChatBotClient/FileContentIndex/52c3bdf2-60d4-411a-9298-3153ce9f82f6.vsidx
+/src/.vs/OllamaChatBotClient/v17/DocumentLayout.backup.json
+/src/.vs/OllamaChatBotClient/v17/DocumentLayout.json

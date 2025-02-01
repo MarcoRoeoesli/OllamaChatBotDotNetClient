@@ -1,0 +1,397 @@
+﻿/* Modern Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e2f;
+    /* Dark background */
+    color: #e0e0e0;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #2a2a40;
+    /* Dark container background */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+    .hamburger-menu .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #e0e0e0;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .hamburger-menu:hover .bar {
+        background-color: #1abc9c;
+        /* Highlight color */
+    }
+
+footer {
+    text-align: center;
+    padding: 0px;
+    background-color: #2a2a40;
+    color: #e0e0e0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    footer a {
+        color: #1abc9c;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Sidebar (Resizable) */
+.sidebar {
+    width: 250px;
+    /* Default width */
+    min-width: 150px;
+    max-width: 400px;
+    background: #2c3e50;
+    /* Dark sidebar */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    resize: horizontal;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-right: 2px solid #1abc9c;
+    /* Accent border */
+}
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+/* Resizable Divider */
+.resizer {
+    width: 5px;
+    cursor: ew-resize;
+    background: #34495e;
+    height: 100%;
+}
+
+    .resizer:hover {
+        background: #1abc9c;
+        /* Highlight color */
+    }
+
+/* Chat Container */
+.chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #2a2a40;
+    /* Dark chat background */
+    background-image: url('logo.webp');
+    background-size: contain;
+    /* Ensures the image covers the entire background */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Prevents repeating */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+/* Buttons */
+.new-chat-btn,
+.clear-chat-btn {
+    background: #1abc9c;
+    /* Modern green */
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
+}
+
+    .new-chat-btn:hover,
+    .clear-chat-btn:hover {
+        background: #16a085;
+        /* Darker green on hover */
+    }
+
+.clear-chat-btn {
+    background: #e74c3c;
+    /* Red for clear button */
+}
+
+    .clear-chat-btn:hover {
+        background: #c0392b;
+        /* Darker red on hover */
+    }
+
+/* Chat List */
+.chat-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #34495e;
+    /* Darker background for chat items */
+    margin-bottom: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 15px;
+    transition: background 0.3s ease;
+}
+
+    .chat-item:hover {
+        background: #1abc9c;
+        /* Highlight color */
+    }
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+    .delete-btn:hover {
+        color: #c0392b;
+        /* Darker red on hover */
+    }
+
+/* Chat Box */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    max-width: 80%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 16px;
+    line-height: 1.4;
+    transition: transform 0.3s ease;
+}
+
+    .chat-message ul,
+    .chat-message ol {
+        padding-left: 20px;
+        /* Add padding to the left of lists */
+        margin: 10px 0;
+        /* Add margin to separate lists from other content */
+    }
+
+    .chat-message li {
+        margin-bottom: 5px;
+        /* Add space between list items */
+        margin-left: 20px;
+        /* Add left margin to align list items properly */
+        list-style-position: inside;
+        /* Ensure bullets/numbers are inside the container */
+    }
+
+    /* Ensure nested lists are properly indented */
+    .chat-message ul ul,
+    .chat-message ol ol,
+    .chat-message ul ol,
+    .chat-message ol ul {
+        padding-left: 20px;
+        /* Add additional padding for nested lists */
+    }
+
+.user-message {
+    background: #1abc9c;
+    /* User message color */
+    color: white;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background: #34495e;
+    /* Bot message color */
+    color: white;
+    align-self: flex-start;
+}
+
+/* Input Container */
+.input-container {
+    display: flex;
+    padding: 15px;
+    background: #2a2a40;
+    /* Dark input background */
+    border-top: 1px solid #444;
+}
+
+textarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    resize: none;
+    height: 50px;
+    overflow-y: auto;
+    background: #34495e;
+    /* Dark textarea background */
+    color: white;
+    font-size: 16px;
+}
+
+    textarea:focus {
+        outline: none;
+        border-color: #1abc9c;
+        /* Highlight color */
+    }
+
+button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    border: none;
+    background: #1abc9c;
+    /* Modern green */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    button:hover {
+        background: #16a085;
+        /* Darker green on hover */
+    }
+
+#cancelButton {
+    background: #e74c3c;
+    /* Red for cancel button */
+}
+
+    #cancelButton:hover {
+        background: #c0392b;
+        /* Darker red on hover */
+    }
+
+/* File Input */
+#fileInput {
+    margin-left: 10px;
+    border: none;
+    background: #34495e;
+    /* Dark file input background */
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#fileList {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #34495e;
+    /* Dark file item background */
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.file-remove {
+    cursor: pointer;
+    color: #e74c3c;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+    .file-remove:hover {
+        color: #c0392b;
+        /* Darker red on hover */
+    }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100vh;
+        z-index: 999;
+        resize: none;
+    }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+    .resizer {
+        display: none;
+    }
+
+    .chat-container {
+        margin-left: 0;
+    }
+}
