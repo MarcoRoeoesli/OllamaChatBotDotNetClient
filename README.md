@@ -1,1 +1,1 @@
-# OllamaChatBotDotNetClient
+# Ollama Chat Bot .Net Client
