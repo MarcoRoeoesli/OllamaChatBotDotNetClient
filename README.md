@@ -64,9 +64,9 @@ Before using the chat client, ensure the following prerequisites are met:
 
 2. **Update Chat Client Configuration**:
    - Open the `app.settings` file in the chat client.
-   - Update the `OllamaUrl` to point to the IP address or hostname of the machine running Ollama. For example:
+   - Update the `OllamaHost` to point to the IP address or hostname of the machine running Ollama. For example:
      ```json
-     "OllamaUrl": "http://<Ollama-Machine-IP>:11434"
+     "OllamaHost": "http://<Ollama-Machine-IP>:11434"
      ```
 
 3. **Start the Chat Client**:
